@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { usePosition } from '../../hooks/custom/usePosition';
+import './map.scss';
+import * as data from '../../data/markers.json';
 
 const Map = () => {
     const { latitude, longitude } = usePosition();
@@ -12,23 +14,34 @@ const Map = () => {
         height: "100vh",
         latitude: 41.408697,
         longitude: 2.185137,
-        zoom: 16
+        zoom: 14
     });
 
     return (
         <div>
-            <h1>COORDS: {latitude}</h1>
+            <h1>MAPS</h1>
+    <h4>COORDS: Latitude : {latitude} Longitude: {longitude}</h4>
             <ReactMapGL
                 {...viewport}
                 mapStyle="mapbox://styles/invisibleobjects/ck45qnz0c1kbc1co205qlt6s2"
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 onViewportChange={(viewport) => setViewport(viewport)}
             >
+                {data.markers.map(marker => (
+                        <Marker
+                        key={marker.id}
+                        latitude={marker.latitude}
+                        longitude={marker.longitude}>HEY
+                        </Marker>
+                ))
+                }
                 {latitude &&
                     <Marker
                         latitude={latitude}
                         longitude={longitude}>
-                        HOLA
+                        <div className="marker">
+                            <img src='https://i.imgur.com/MK4NUzI.png' alt="marker icon"/>
+                        </div>
             </Marker>}
             </ReactMapGL>
         </div>
