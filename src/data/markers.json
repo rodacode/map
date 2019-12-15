@@ -2,23 +2,27 @@
     "markers":[
     {
         "id":1,
-        "latitude":41.408397,
-        "longitude":2.1847595999999997
+        "name": "Sagrada Familia",
+        "latitude":41.4036299,
+        "longitude": 2.1743558
     },
         {
         "id":2,
-        "latitude":41.428697,
-        "longitude":2.18999999997
+        "name": "Torre Agbar",
+        "latitude":41.4030908,
+        "longitude":2.1884269
     },
         {
         "id":3,
-        "latitude":41.468697,
-        "longitude":2.147594999999997
+        "name": "Parc Guell",
+        "latitude":41.413883,
+        "longitude":2.153026
     },
         {
         "id":4,
-        "latitude":41.408697,
-        "longitude":2.1847594999999997
+        "name": "Parque de la Ciudadela",
+        "latitude":41.3908026,
+        "longitude":2.1862511
     }
     ]
 }
